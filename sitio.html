@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sitio FEXPO ITSEC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f0f0f0;
+        }
+        header {
+            background: #005f8a;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            display: none;
+            padding: 20px;
+        }
+        section.active {
+            display: block;
+        }
+        .caratula {
+            text-align: center;
+        }
+        .logo {
+            width: 200px;
+            margin: 10px;
+        }
+        .galeria {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .galeria img {
+            width: 300px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 5px #888;
+        }
+        video {
+            display: block;
+            margin: 20px auto;
+            width: 60%;
+            max-width: 400px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Instituto Técnico Superior de Educación Comercial - ITSEC</h1>
+        <nav>
+            <a href="#caratula">Carátula</a>
+            <a href="#emp1">VINO & SINGANI</a>
+            <a href="#emp2">DULCE TENTACION</a>
+            <a href="#emp3">LAU CALZADOS</a>
+        </nav>
+    </header>
+
+    <!-- Carátula -->
+    <section id="caratula" class="active caratula">
+        <img src="logo itsec.png" alt="Escudo del Instituto" class="logo">
+        <img src="LOGO SISTEMAS.png" alt="Logo de la Carrera" class="logo">
+        <h2>Nombre: MAYKOL ESTEBAN CHOQUE ZAPANA</h2>
+        <p>Curso: 1RO C SISTEMAS INFORMATICOS</p>
+        <p>Materia: DISEÑO Y PROGRAMACION WEB 1</p>
+        <p>Docente: ING. HUGO ALFREDO TABORGA PAZ</p>
+    </section>
+
+    <!-- Emprendimiento 1 -->
+    <section id="emp1">
+        <h2>Ven, Vive y Siente CAMARGO - VINO & SINGANI</h2>
+        <div class="galeria">
+            <img src="SINGANI.jpg" alt="Foto 1">
+            <img src="vinosingani.jpg" alt="Foto 2">
+            <img src="VINO.jpg" alt="Foto 3">
+        </div>
+        <P>
+            Ven, Vive y Siente CAMARGO
+Camargo, ubicado en la provincia de Nor Cinti (Chuquisaca), es tierra de historia, tradición y sabor. Reconocido a nivel nacional por la calidad de sus vinos y su tradicional singani, también ofrece frutas como uva, durazno, ciruelo, damasco y productos como mocochinchi, dulces y licores. Con paisajes únicos, gente hospitalaria y fácil acceso, Camargo es el lugar ideal para vivir y sentir lo mejor del sur de Bolivia.
+        </P>
+        <h3>Video</h3>
+        <video controls>
+            <source src="camargo.mp4" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
+    </section>
+
+    <!-- Emprendimiento 2 -->
+    <section id="emp2">
+        <h2>DULCE TENTACION</h2>
+        <div class="galeria">
+            <img src="FRESAS.jpg" alt="Foto 1">
+            <img src="DULCE TENTCION.jpg" alt="Foto 2">
+            <img src="LECHE.jpg" alt="Foto 3">
+        </div>
+        <h3>Video</h3>
+        <video controls>
+            <source src="DULCE.mp4" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
+    </section>
+
+    <!-- Emprendimiento 3 -->
+    <section id="emp3">
+        <h2>Emprendimiento 3 - Comida Típica</h2>
+        <div class="galeria">
+            <img src="FOTO1.jpg" alt="Foto 1">
+            <img src="LOGOCALSADOS.jpg" alt="Foto 2">
+            <img src="FOTO2.jpg" alt="Foto 3">
+        </div>
+        <h3>Video</h3>
+        <video controls>
+            <source src="CALSADOS.mp4" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
+    </section>
+
+    <script>
+        // Cambiar sección visible según enlace
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const target = link.getAttribute('href').substring(1);
+                document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+                document.getElementById(target).classList.add('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
